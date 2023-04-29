@@ -5,7 +5,7 @@ As part of the "Internet Development Environments" course, we created a game cal
 
 
 **💡 Create by:
-    Eden Tzarfaty - 209299684
+    Eden Tzarfaty - 209299684,
     Yadin Deri - 206116204**
     
  **📎 Website:**
