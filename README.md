@@ -1,5 +1,4 @@
 # Space Invaders
-## Assignment 2
 
 ## Description
 As part of the "Internet Development Environments" course, we created a game called "Space Invaders". 
