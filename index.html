@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Space Invaders</title>
+    <!-- This link tag sets the favicon for the page, which is the small icon displayed next to the title of the page in the browser tab. -->
+    <link rel="icon" type="image/png" sizes="15x15" href="./resources/images/player.png">
+    <!-- This link tag sets the style sheet for the page, which is located in the css folder. -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!-- These meta tags set the character encoding and viewport settings for the page. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- These link tags are for the W3.CSS framework and the Amatic SC font from Google Fonts. -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <!-- This script tag loads the jQuery library, which is a JavaScript library that simplifies HTML DOM traversal and manipulation. -->
+    <script src="./resources/javascript/jquery-3.4.1.slim.min.js"></script>
+    <!-- This script tag loads the web.js file, which contains the custom JavaScript code for the page. -->
+    <script type="text/javascript" src="web.js"></script>
+    <!-- This link tag sets the style sheet for the page, which is located in the css folder. -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen"/>
+    <!-- These script tags load the jQuery Validation plugin and its additional methods. -->
+    <!-- The plugin is used for form validation and is loaded from CDNs. -->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+<body>
+
+
+<!-- Menu -->
+<div class="w3-top w3-hide-small">
+    <div class="w3-bar w3-xxlarge w3-black w3-opacity w3-hover-opacity-off" id="mainNavbar">
+        <a class="w3-bar-item w3-button" onclick="showWelcome()">Welcome</a>
+        <!--//To add-->
+        <a id="nav_about" class="w3-bar-item w3-button" onclick="showAbout()">About</a>
+        <!--//To add-->
+        <a class="w3-bar-item w3-button" onclick="showSignin()">Sign-In</a>
+        <a class="w3-bar-item w3-button" onclick="showSignup()">Sign-Up</a>
+        <a id="hello" style="font-size: 32px;position: fixed;top: 10px;right: 70px;"><span>Hi </span><span
+                id=loged_in_uname>Guest</span><span>!</span></a>
+        <a id="nav_logout" class="w3-bar-item w3-button" onclick="logout()" style="display: none">LogOut</a>
+        <a id="myButton" class="w3-bar-item w3-button" onclick="showPlay()" style="display: none; color: #0f47d9">New
+            Game</a>
+        <a id="setting_show" class="w3-bar-item w3-button" onclick="showSettings()" style="display: none">settings</a>
+        <img id="marioLOGO" src="./resources/images/marioLOGO.png" alt="Mario Logo">
+    </div>
+</div>
+
+<header class="w3-display-container w3-grayscale-min" id="welcome">
+    <div class="w3-display-bottomleft w3-padding">
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="w3-display-middle w3-center">
+        <span id="welc" class="w3-text-white w3-hide-small"><br><br><br><br><br><br>Welcome to <br>Mario Invaders</span>
+        <br>
+        <br>
+        <br>
+        <p>
+            <button id="signin_welcome_btn" class="w3-button w3-xxxlarge w3-white" onclick="showSignin()">Sign In
+            </button>
+            <button id="signup_welcome_btn" class="w3-button w3-xxxlarge w3-white" onclick="showSignup()">Sign Up
+            </button>
+        </p>
+        <br>
+        <br>
+        <br>
+        <p class="w3-text-white w3-hide-small" style="font-size: 20px">Eden Tzarfaty - 209299684 -> <a
+                href="https://web-development-environments-2023.github.io/209299684/">https://web-development-environments-2023.github.io/209299684/</a>
+            <br>Yadin Deri - 206116204 -> <a
+                    href="https://web-development-environments-2023.github.io/206116204_YadinDeri/">
+                https://web-development-environments-2023.github.io/206116204_YadinDeri/</a></p>
+    </div>
+</header>
+
+
+<!-- about Div-->
+<div id="about" style="display:none">
+    <!-- Modal Dialog -->
+    <div id="modal_contant">
+        <span class="close">&times;</span>
+        <p style="font-size: 25px;">Eden Tzarfaty - 209299684
+            <br>
+            Yadin Deri - 206116204
+            <br>
+            Difficult : Incorporating standard validation tests that were not present in the jQuery library proved to be
+            a challenging task for us, which we eventually resolved by implementing regular expressions.
+            <br>
+            Our Tamplate: W3-school.
+            <br>
+            We utilize the jQuery Validation Plugin to seamlessly implement validation on pre-existing forms, while also
+            providing ample opportunities for tailoring to our specific application needs.
+            <br>
+            In the game, the player has three chances to be disqualified. A timer displays the remaining time until the
+            end of the game, along with the player's remaining life.
+            Before each game, a settings screen allows the player to select game settings, such as the hero and game
+            time.
+            During the game, sound effects play when the player's spacecraft is disqualified or when it successfully
+            hits an evil spaceship. </p></div>
+</div>
+
+
+<!-- SIGNUP Div-->
+<div id="signup" style="display:none">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form id="sign_up_form" class="cmxform">
+
+        <h1>Sign Up</h1>
+        <p>Create new account</p>
+        <hr>
+
+        <label><b>Username</b></label>
+        <input id="singup_username_id" type="text" placeholder="Enter Username" name="singup_username" required>
+        <br>
+        <br>
+
+        <label><b>Password</b></label>
+        <input id="signup_psw_id" type="password" placeholder="Enter Password" name="signup_psw" required>
+        <br>
+        <br>
+
+        <label><b>Password Again</b></label>
+        <input id="signup_psw_id2" type="password" placeholder="Password" name="signup_psw2" required>
+        <br>
+        <br>
+
+        <label><b>First Name</b></label>
+        <input type="text" placeholder="Example:Eden" name="singup_name" required>
+        <br>
+        <br>
+
+        <label><b>Last Name</b></label>
+        <input type="text" placeholder="Example:Tzarfaty" name="singup_lname" required>
+        <br>
+        <br>
+
+        <label><b>Email</b></label>
+        <input type="text" placeholder="Example:Israel@BGU.com" name="signup_email" required>
+        <br>
+        <br>
+
+        <label><b>Date of Birth</b></label>
+        <input type="date" name="singup_birthDate" required>
+        <br>
+        <br>
+
+        <div class="clearfix">
+            <button type="submit" class="signupbtn">Sign Up</button>
+            <input id="reset" type="reset" value="Reset Details">
+        </div>
+    </form>
+    <br>
+    <br>
+
+    <a class="w3-button w3-xxlarge w3-black w3-center" onclick="showSignin()">already have an account</a>
+</div>
+
+
+<!-- SIGN IN Div-->
+<div id="signin" style="display:none">
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- SIGN IN FORM -->
+    <form id="signInForm" class="cmxform" method="post">
+
+        <h1>Lets Play!</h1>
+
+        <label><b>Username</b></label>
+        <input id="login_uname_id" type="text" placeholder="Enter Username" name="login_uname" required>
+        <br>
+        <br>
+        <label><b>Password</b></label>
+        <input id="login_psw_id" type="password" placeholder="Enter Password" name="login_psw" required>
+        <br>
+        <br>
+        <button type="submit">Login</button>
+        <input id="reset" type="reset" value="Reset">
+    </form>
+    <br>
+    <br>
+
+</div>
+<!-- Settings Div-->
+<div id="settings" style="display: none">
+    <br>
+    <br>
+    <br>
+    <br>
+    <form id="settings_form" class="cmxform">
+        <h1>Adjust preferred setting</h1>
+        <label>Movement keys:</label>
+        <div>
+            Down: <input type="button" id="down_key" value="ArrowDown"/>
+            Up: <input type="button" id="up_key" value="ArrowUp"/>
+            Left: <input type="button" id="left_key" value="ArrowLeft"/>
+            Right: <input type="button" id="right_key" value="ArrowRight"/>
+            Space: <input type="button" id="shoot_key" value="Space"/>
+        </div>
+
+
+        <br>
+        <!-- chose hero -->
+        <label>Hero:</label>
+        <div class="photo-container">
+            <input type="radio" id="photo1" name="photo" value="1" checked="checked">
+            <label for="photo1"><img src="resources/sounds/player.png" alt="Photo 1" class="photo"></label>
+            <input type="radio" id="photo2" name="photo" value="2">
+            <label for="photo2"><img src="resources/images/player2.png" alt="Photo 2" class="photo"></label>
+            <input type="radio" id="photo3" name="photo" value="3">
+            <label for="photo3"><img src="resources/images/player3.png" alt="Photo 3" class="photo"
+                                     style="height: 80%;width: 80%"></label>
+            <input type="radio" id="photo5" name="photo" value="5">
+            <label for="photo5"><img src="resources/images/player5.png" alt="Photo 5" style="height: 100%;width: 100%"
+                                     class="photo"></label>
+            <input type="radio" id="photo4" name="photo" value="4">
+            <label for="photo4"><img src="resources/images/player4.png" alt="Photo 4" style="height: 130%;width: 130%"
+                                     class="photo"></label>
+
+        </div>
+        <br>
+
+        <label for="totalTime">Total Time (seconds):</label>
+        <input id="totalTime" type="number" min="120" value="120"/>
+
+        <br>
+
+        <label for="monstersAmount">How Many Monsters:</label>
+        <input id="monstersAmount" type="number" min="20" max="40" value="20"/>
+
+        <br>
+        <label for="speedOfMonsters">Speed of Monsters</label>
+        <input id="speedOfMonsters" type="number" min="1" max="8" value="1"/>
+
+        <br>
+        <label for="keyboard">Shooting Keyboard:</label>
+        <input type="text" id="keyboard" value="Space" onclick="onListen()" onfocusout="offListen()"
+               readonly="readonly">
+        <br> <br>
+        <input id="startFromSetting" class="w3-button w3-xxlarge w3-white" type="button" onclick="showPlay()"
+               value="Start Game">
+
+    </form>
+</div>
+
+<div id="play" style="display: none">
+    <br>
+    <br>
+    <div>
+        <div class="timer">
+            <p><img src="resources/images/timer.png" alt="timer" width="50" height="50">
+            <p id="timer"></p>
+        </div>
+        <canvas id="game"></canvas>
+        <div id="table-container"></div>
+    </div>
+</div>
+
+<!--footer -->
+<footer style="color: white;">
+    <p> made by - Eden Tzarfaty & Yadin Deri<br>contact us at - edenrivk@post.bgu.ac.il , yadinde@post.bgu.ac.il</p>
+</footer>
+<script type="module" src="index.js"></script>
+
+</body>
+</html>
+
+
