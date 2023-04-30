@@ -1,0 +1,255 @@
+body, html {
+    height: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6, a {
+    font-family: "Ink Free", sans-serif;
+}
+
+body {
+    background-image: url("https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/portals_3/2x1_SuperMarioHub_image1600w.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.menu {
+    display: none;
+}
+
+#canvas {
+}
+
+#marioLOGO {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-30%);
+    right: 20px;
+    height: 125px;
+    width: 125px;
+    margin-right: 45%;
+
+}
+
+#myButton {
+    display: block;
+    position: absolute;
+    margin-left: 55%;
+}
+
+#setting_show {
+    display: block;
+    position: absolute;
+    margin-left: 70%;
+}
+
+
+#game {
+    margin-left: 234px;
+    /*margin-top: -100px;*/
+    /*position: absolute; !* Add this to position the game element relative to the canvas *!*/
+    overflow-x: scroll;
+    /*overflow-y: hidden;*/
+}
+
+
+#welc {
+    border-radius: 20px 20px;
+    max-width: 550px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 100px;
+    text-shadow: 5px 5px 0 #444;
+}
+
+#sign_up_form, #signInForm {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.8);
+    background-color: firebrick;
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 20px 20px;
+    max-width: 550px;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 21px;
+    -webkit-animation: animatezoom 0.7s;
+    animation: animatezoom 0.7s;
+}
+
+#settings_form {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(177, 34, 34);
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 20px 20px;
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+
+}
+
+/* CSS to set the layout */
+.photo-container {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically in the center */
+}
+
+.photo-container div {
+    flex: 1; /* Make each photo container take up equal space */
+    text-align: center; /* Center the photo and label horizontally */
+}
+
+.photo {
+    width: 100%; /* Set the width of the photo */
+    height: 100%; /* Set the height of the photo */
+    object-fit: cover; /* Ensure the photo maintains its aspect ratio */
+    inline-size: 50%;
+}
+
+
+#show_settings_game_section, #game_online_info {
+    width: 25%;
+    height: 640px;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    float: left;
+    padding: 40px;
+    background-color: #47aad8;
+    border: 5px solid rgb(255, 255, 255);
+}
+
+
+#about {
+    position: fixed; /*Stay in place */
+    z-index: 1; /*Sit on top*/
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: firebrick; /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+
+/* Content inside modal dialog */
+#modal_contant {
+    /* Makes modal come from top to bottom */
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+
+    background-color: firebrick;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 20px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    display: block;
+    font-size: 25px;
+    font-family: "Ink Free", sans-serif;
+    font-weight: bold;
+    /*background-color: black;*/
+    text-align: center;
+    z-index: -1;
+    /*margin-left: 600px;*/
+    margin-top: 35%;
+}
+
+
+.highlight {
+    background-color: #ee0505;
+}
+
+.high {
+    background-color: #0c88fe;
+}
+
+#table-container {
+    width: 50%;
+    height: 50%;
+    border-collapse: collapse;
+    margin-left: 500px;
+    background: #aaaaaa;
+    font-size: 20px;
+    border: 10px solid black;
+
+}
+
+#table-container .table td {
+    width: 33.33%;
+    border: 5px solid black;
+    padding: 10px;
+}
+
+canvas {
+    box-shadow: black 20px 10px 50px;
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+
+button {
+    background-color: #0f47d9;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 12px 16px 0 rgb(15, 71, 217), 0 17px 50px 0 rgb(203, 30, 30);
+
+}
+
+.timer {
+    font-size: 30px;
+    /*position: absolute;*/
+    display: flex;
+    color: lavender;
+    /*padding-top: 40px;*/
+    margin-left: 800px;
+    width: 50%
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
