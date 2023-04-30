@@ -1,8 +1,7 @@
 # Mario Invaders
 
+![MicrosoftTeams-image (10)](https://user-images.githubusercontent.com/101931918/235373718-11563e60-e229-4cc1-84d1-a2654a304470.png)
 
-
-            ![marioLOGO](https://user-images.githubusercontent.com/101931918/235373604-b49b703d-bdf1-4e55-a56c-e8d473aaa647.png)
 
 
 
