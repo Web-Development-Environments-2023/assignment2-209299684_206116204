@@ -5,11 +5,11 @@
 
 
 
-#💡 Description
+# 💡 Description
 
 As part of the "Enviourmnets development Web" course, we created a game called "Space Invaders". 
 
- 📎 Create by:
+** 📎 Create by: **
 
 ▶️ Eden Tzarfaty : 209299684 edenrivk@post.bgu.ac.il
 
